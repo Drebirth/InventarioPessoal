@@ -1,0 +1,30 @@
+@model dotnet.Models.Item
+
+@{
+    ViewData["Title"] = "Adiciona novo item no inventario pessoal";
+}
+
+<h2>Incluir um novo item no inventário </h2>
+
+
+<div class="row">
+    <div class="col-md-6">
+<form asp-action="Criar">
+  <div class="mb-3">
+    <label asp-for="Nome" class="form-label"></label>
+    <input class="form-control" asp-for="Nome" />
+  </div>
+  <div class="mb-3">
+    <label asp-for="Descricao" class="form-label"></label>
+    <input class="form-control" asp-for="Descricao" />
+  </div>
+  <div class="mb-3">
+    <label asp-for="Quantidade" class="form-label"></label>
+    <input class="form-control" asp-for="Quantidade" />
+  </div>
+  <div class="form-group">
+    <input type="submit" value="Criar" class="btn btn-primary"/>
+  </div>
+</form>
+    </div>
+</div>

@@ -17,6 +17,8 @@ namespace dotnet.Models
             Descricao = descricao;
             Quantidade = quantidade;
         }
+
+        public Item(){}
         public int Id { get; set;}
         public string Nome 
         { 
