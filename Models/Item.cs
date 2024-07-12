@@ -13,9 +13,9 @@ namespace dotnet.Models
 
         public Item(string nome, string descricao, int quantidade)
         {
-            Nome = nome;
-            Descricao = descricao;
-            Quantidade = quantidade;
+            _nome = nome;
+            _descricao = descricao;
+            _quantidade = quantidade;
         }
 
         public Item(){}
