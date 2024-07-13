@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using dotnet.Context;
 using dotnet.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace dotnet.Controllers
 {
@@ -36,11 +37,18 @@ namespace dotnet.Controllers
         [HttpPost]
         public IActionResult Criar(Item item)
         {
+            
+            if(item.Quantidade < 1)
+            {
+                ModelState.AddModelError("Quantidade","O campo quantidade não pode ser menor que 1");
+                return View(item);
+            }
+            
             if(ModelState.IsValid)
             {
-                _context.Itens.Add(item);
-                _context.SaveChanges();
-                return RedirectToAction(nameof(Index));
+               _context.Itens.Add(item);
+               _context.SaveChanges();
+               return RedirectToAction(nameof(Index));
             }
             return View(item);
         }
