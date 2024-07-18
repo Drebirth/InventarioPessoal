@@ -15,12 +15,16 @@
     </div>
   </div>
   <div class="mb-3 row">
+    <div asp-asp-validation-summary="ModelOnly" class="text-danger"></div>
     <label asp-for="Senha" class="col-sm-2 col-form-label"></label>
     <div class="col-sm-10">
       <input type="password" class="form-control" asp-for="Senha"/>
+      <span asp-validation-for="Senha" class="text-danger"></span>
     </div>
   </div>
     <div>
-        <input type="submmit" value="Entrar">
+        <button type="submit" class="btn btn-primary mb-2">Entrar</button>
     </div>
 </form>
+
+<a asp-action="CadastroUsuario">Cadastro</a>

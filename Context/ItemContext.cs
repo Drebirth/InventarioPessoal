@@ -15,6 +15,7 @@ namespace dotnet.Context
         }
 
         public DbSet<Item> Itens{ get; set; }
+        public DbSet<Usuario> Usuarios{ get; set; }
     }
 
     

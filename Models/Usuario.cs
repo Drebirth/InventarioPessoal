@@ -12,6 +12,8 @@ namespace dotnet.Models
         private string _login;
         private string _senha;
 
+        public Usuario(){}
+
         public int Id 
         {
             get => _id;
