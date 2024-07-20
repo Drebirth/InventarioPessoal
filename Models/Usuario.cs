@@ -12,6 +12,12 @@ namespace dotnet.Models
         private string _login;
         private string _senha;
 
+        public Usuario(string login, string senha)
+        {
+            _login = login;
+            _senha = senha;
+        }
+
         public Usuario(){}
 
         public int Id 

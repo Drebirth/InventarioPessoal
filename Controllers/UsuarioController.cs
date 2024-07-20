@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 using dotnet.Context;
 using dotnet.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 namespace dotnet.Controllers
 {
@@ -27,23 +29,31 @@ namespace dotnet.Controllers
 
         [HttpPost]
         public IActionResult Login(Usuario user)
-        {   
-            if(ModelState.IsValid)
-            {
+        {  
 
             var usuarioBanco = _usuarioContext.Usuarios
             .FromSql($"SELECT * FROM Usuarios WHERE Login = {user.Login} AND Senha = {user.Senha}")
             .FirstOrDefault();
-            if(usuarioBanco.Login != user.Login || usuarioBanco.Senha != user.Senha)
+
+            if(ModelState.IsValid)
             {
-                 ModelState.AddModelError("Senha","Favor verificar a senha");
-                 return View(user);
-            }
+                // if(user.Equals(Empty) || user.Equals(null))
+                // {
+                //     ModelState.AddModelError("Senha","teste vazio ou nulo");
+                //     return View(user);
+                // }
+            
             if(usuarioBanco != null)
             {
                 return RedirectToAction(nameof(_inventario.Lista), "Item");   
             }
+            if(usuarioBanco == null ){
+                ModelState.AddModelError("Senha","Login ou Senha é inválida, favor verificar os campos!");
+                return View(user);
             }
+            
+            
+           }
             
             return View(user);
         }
