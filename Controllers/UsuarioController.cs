@@ -28,34 +28,25 @@ namespace dotnet.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(Usuario user)
+        public IActionResult Login(Usuario usuario)
         {  
-
-            var usuarioBanco = _usuarioContext.Usuarios
-            .FromSql($"SELECT * FROM Usuarios WHERE Login = {user.Login} AND Senha = {user.Senha}")
-            .FirstOrDefault();
-
-            if(ModelState.IsValid)
-            {
-                // if(user.Equals(Empty) || user.Equals(null))
-                // {
-                //     ModelState.AddModelError("Senha","teste vazio ou nulo");
-                //     return View(user);
-                // }
+            
+             var usuarioBanco = _usuarioContext.Usuarios
+            .FromSql($"SELECT * FROM USUARIOS WHERE Login = {usuario.Login} AND Senha = {usuario.Senha}").FirstOrDefault();
             
             if(usuarioBanco != null)
             {
-                return RedirectToAction(nameof(_inventario.Lista), "Item");   
+                usuario = usuarioBanco;
+                //return RedirectToAction(nameof(_inventario.Lista),"Item");
+                return RedirectToAction("Lista","Item",new {id = usuario.Id});
+               
             }
-            if(usuarioBanco == null ){
-                ModelState.AddModelError("Senha","Login ou Senha é inválida, favor verificar os campos!");
-                return View(user);
-            }
+            else
+            {
+                ModelState.AddModelError("Senha","Usuario nao encontrado");
+                return View(usuario);
+            }              
             
-            
-           }
-            
-            return View(user);
         }
 
         public IActionResult CadastroUsuario()
@@ -66,12 +57,18 @@ namespace dotnet.Controllers
         [HttpPost]
         public IActionResult CadastroUsuario(Usuario usuario)
         {
-            if(ModelState.IsValid)
-            {
+           var verificacao = _usuarioContext.Usuarios
+           .FromSql($"SELECT * FROM USUARIOS WHERE Login = {usuario.Login}").FirstOrDefault();
+           if(verificacao == null)
+           {
                 _usuarioContext.Usuarios.Add(usuario);
                 _usuarioContext.SaveChanges();
                 return RedirectToAction(nameof(Login));
-            }
+           }
+           else
+           {
+            ModelState.AddModelError("Senha","Usuario já cadastro");
+           }
             return View(usuario);
         }
     }

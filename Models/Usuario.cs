@@ -20,6 +20,8 @@ namespace dotnet.Models
 
         public Usuario(){}
 
+        public ICollection<Item> Itens{ get; set; }
+
         public int Id 
         {
             get => _id;

@@ -11,8 +11,8 @@ using dotnet.Context;
 namespace dotnet.Migrations
 {
     [DbContext(typeof(ItemContext))]
-    [Migration("20240710023030_CriacaoTabelaItem")]
-    partial class CriacaoTabelaItem
+    [Migration("20240720135750_criacaoDoBanco")]
+    partial class criacaoDoBanco
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -43,9 +43,51 @@ namespace dotnet.Migrations
                     b.Property<int>("Quantidade")
                         .HasColumnType("int");
 
+                    b.Property<int>("usuarioIDId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
+                    b.HasIndex("usuarioIDId");
+
                     b.ToTable("Itens");
+                });
+
+            modelBuilder.Entity("dotnet.Models.Usuario", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Login")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Usuarios");
+                });
+
+            modelBuilder.Entity("dotnet.Models.Item", b =>
+                {
+                    b.HasOne("dotnet.Models.Usuario", "usuarioID")
+                        .WithMany("itens")
+                        .HasForeignKey("usuarioIDId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("usuarioID");
+                });
+
+            modelBuilder.Entity("dotnet.Models.Usuario", b =>
+                {
+                    b.Navigation("itens");
                 });
 #pragma warning restore 612, 618
         }

@@ -40,7 +40,12 @@ namespace dotnet.Migrations
                     b.Property<int>("Quantidade")
                         .HasColumnType("int");
 
+                    b.Property<int>("usuarioId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("usuarioId");
 
                     b.ToTable("Itens");
                 });
@@ -64,6 +69,22 @@ namespace dotnet.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Usuarios");
+                });
+
+            modelBuilder.Entity("dotnet.Models.Item", b =>
+                {
+                    b.HasOne("dotnet.Models.Usuario", "usuario")
+                        .WithMany("Itens")
+                        .HasForeignKey("usuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("usuario");
+                });
+
+            modelBuilder.Entity("dotnet.Models.Usuario", b =>
+                {
+                    b.Navigation("Itens");
                 });
 #pragma warning restore 612, 618
         }

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using dotnet.Context;
 using dotnet.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
 namespace dotnet.Controllers
@@ -12,6 +13,9 @@ namespace dotnet.Controllers
     public class ItemController : Controller
     {
         private readonly ItemContext _context;
+        //private readonly ItemContext _usuario.;
+
+        
 
         public ItemController(ItemContext context)
         {
@@ -23,12 +27,15 @@ namespace dotnet.Controllers
             return View();
         }
 
+        
         public IActionResult Lista()
         {
+            //var itens = _context.Itens.FromSql($"SELECT * FROM Usuarios WHERE usuarioId = {id}");
             var itens = _context.Itens.ToList();
             return View(itens);
         }
 
+        
         public IActionResult Criar()
         {
             return View();
@@ -50,7 +57,8 @@ namespace dotnet.Controllers
                 ModelState.AddModelError("Nome","Nome não pode ser vazio!");
                 return View(item);
             }
-             
+                var user = _context.Usuarios.Find(1);
+                 item.usuario = user;
                _context.Itens.Add(item);
                _context.SaveChanges();
                return RedirectToAction(nameof(Index));

@@ -14,13 +14,20 @@ namespace dotnet.Models
         private int _quantidade;
 
         public Item(int id, string nome, string descricao, int quantidade)
-        {   _id = id;
+        {   
+            //usuario.Id = id;
+            _id = id;
             _nome = nome;
             _descricao = descricao;
             _quantidade = quantidade;
         }
 
         public Item(){}
+
+        public Usuario usuario
+        {
+            get; set;
+        }
 
         public int Id 
         { get => _id;
