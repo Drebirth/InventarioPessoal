@@ -38,7 +38,7 @@ namespace dotnet.Controllers
             {
                 usuario = usuarioBanco;
                 //return RedirectToAction(nameof(_inventario.Lista),"Item");
-                return RedirectToAction("Lista","Item",new {id = usuario.Id});
+                return RedirectToAction("Criar","Item",new {id = usuario.Id});
                
             }
             else

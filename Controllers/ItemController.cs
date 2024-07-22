@@ -28,10 +28,12 @@ namespace dotnet.Controllers
         }
 
         
-        public IActionResult Lista()
+        public IActionResult Lista(int id)
         {
-            //var itens = _context.Itens.FromSql($"SELECT * FROM Usuarios WHERE usuarioId = {id}");
-            var itens = _context.Itens.ToList();
+           // var itens = _context.Itens.FromSql($"SELECT * FROM Usuarios WHERE usuarioId = {id}");
+            var user = _context.Usuarios.Find(id);
+            var itens = _context.Itens.ToList().Where(x => x.usuario == user);
+            //var itens = _context.Itens.ToList().Where(x => x.usuario == id);
             return View(itens);
         }
 
@@ -42,9 +44,9 @@ namespace dotnet.Controllers
         }
 
         [HttpPost]
-        public IActionResult Criar(Item item)
+        public IActionResult Criar(Item item, int id)
         {
-         if(ModelState.IsValid){
+        // if(ModelState.IsValid){
 
             if(item.Quantidade < 1)
             {
@@ -57,12 +59,17 @@ namespace dotnet.Controllers
                 ModelState.AddModelError("Nome","Nome não pode ser vazio!");
                 return View(item);
             }
-                var user = _context.Usuarios.Find(1);
-                 item.usuario = user;
+                 var user = _context.Usuarios.Find(id);
+                
+                //     _context.Itens.FromSql("SET IDENTITY_INSERT Itens ON");
+                
+                item.usuario = user; 
                _context.Itens.Add(item);
                _context.SaveChanges();
+                
                return RedirectToAction(nameof(Index));
-         }   
+                
+        //}   
            
             return View(item);
         }
