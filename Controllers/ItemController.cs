@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 using dotnet.Context;
 using dotnet.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
+
 
 namespace dotnet.Controllers
 {
     public class ItemController : Controller
     {
-        private readonly ItemContext _context;
+        private readonly InventarioContext _context;
 
-        public ItemController(ItemContext context)
+        public ItemController(InventarioContext context)
         {
             _context = context;
         }
@@ -53,7 +53,7 @@ namespace dotnet.Controllers
              
                _context.Itens.Add(item);
                _context.SaveChanges();
-               return RedirectToAction(nameof(Index));
+               return RedirectToAction(nameof(Lista));
          }   
            
             return View(item);

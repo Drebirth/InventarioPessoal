@@ -7,17 +7,17 @@ using dotnet.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
+
 
 namespace dotnet.Controllers
 {
     public class UsuarioController : Controller
     {
 
-        private readonly ItemContext _usuarioContext;
+        private readonly InventarioContext _usuarioContext;
         private readonly ItemController _inventario;
 
-        public UsuarioController(ItemContext context)
+        public UsuarioController(InventarioContext context)
         {
             _usuarioContext = context;
             

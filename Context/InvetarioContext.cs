@@ -7,9 +7,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace dotnet.Context
 {
-    public class ItemContext : DbContext
+    public class InventarioContext : DbContext
     {
-        public ItemContext(DbContextOptions<ItemContext> options) : base(options)
+        public InventarioContext(DbContextOptions<InventarioContext> options) : base(options)
         {
 
         }

@@ -5,8 +5,8 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
- builder.Services.AddDbContext<ItemContext>(options =>
-     options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao")));
+ builder.Services.AddDbContext<InventarioContext>(options =>
+     options.UseSqlite(builder.Configuration.GetConnectionString("SQLiteConnection")));
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

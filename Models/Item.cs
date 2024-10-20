@@ -8,6 +8,12 @@ namespace dotnet.Models
 {
     public class Item
     {   
+        /*
+        public long Id { get; set; }
+        public string Nome { get; set; }
+        public string Descricao { get; set; }
+        public int Quantidade { get; set; }
+        */
         private int _id;
         private string _nome;
         private string _descricao;
@@ -45,6 +51,7 @@ namespace dotnet.Models
         { 
             get => _quantidade; set => _quantidade = value; 
         }
+        
 
     }
 }

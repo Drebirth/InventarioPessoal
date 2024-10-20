@@ -9,63 +9,63 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = dotnet
 build_property.RootNamespace = dotnet
-build_property.ProjectDir = C:\Users\danie\Estudos\projetos\dotnet\
+build_property.ProjectDir = C:\Users\danie\Estudos\projetos\InventarioPessoal\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\danie\Estudos\projetos\dotnet
+build_property.MSBuildProjectDirectory = C:\Users\danie\Estudos\projetos\InventarioPessoal
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/danie/Estudos/projetos/dotnet/Views/Home/Index.cshtml]
+[C:/Users/danie/Estudos/projetos/InventarioPessoal/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Estudos/projetos/dotnet/Views/Home/Privacy.cshtml]
+[C:/Users/danie/Estudos/projetos/InventarioPessoal/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Estudos/projetos/dotnet/Views/Item/Criar.cshtml]
+[C:/Users/danie/Estudos/projetos/InventarioPessoal/Views/Item/Criar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxDcmlhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Estudos/projetos/dotnet/Views/Item/Editar.cshtml]
+[C:/Users/danie/Estudos/projetos/InventarioPessoal/Views/Item/Editar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxFZGl0YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Estudos/projetos/dotnet/Views/Item/Excluir.cshtml]
+[C:/Users/danie/Estudos/projetos/InventarioPessoal/Views/Item/Excluir.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxFeGNsdWlyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Estudos/projetos/dotnet/Views/Item/Index.cshtml]
+[C:/Users/danie/Estudos/projetos/InventarioPessoal/Views/Item/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Estudos/projetos/dotnet/Views/Item/Lista.cshtml]
+[C:/Users/danie/Estudos/projetos/InventarioPessoal/Views/Item/Lista.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxMaXN0YS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Estudos/projetos/dotnet/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/danie/Estudos/projetos/InventarioPessoal/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Estudos/projetos/dotnet/Views/Usuario/CadastroUsuario.cshtml]
+[C:/Users/danie/Estudos/projetos/InventarioPessoal/Views/Usuario/CadastroUsuario.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xDYWRhc3Ryb1VzdWFyaW8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Estudos/projetos/dotnet/Views/Usuario/Login.cshtml]
+[C:/Users/danie/Estudos/projetos/InventarioPessoal/Views/Usuario/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Estudos/projetos/dotnet/Views/_ViewImports.cshtml]
+[C:/Users/danie/Estudos/projetos/InventarioPessoal/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Estudos/projetos/dotnet/Views/_ViewStart.cshtml]
+[C:/Users/danie/Estudos/projetos/InventarioPessoal/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Estudos/projetos/dotnet/Views/Shared/_Layout.cshtml]
+[C:/Users/danie/Estudos/projetos/InventarioPessoal/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-5g20lzmktb
